@@ -1,0 +1,91 @@
+.select-hero-background {
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  background: url('../assets/heroes.jpeg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  &.shake {
+    animation: shake .25s 1 forwards;
+    
+    @keyframes shake {
+      0% { transform: scale(1) rotate(0deg); }
+      10% { transform: scale(1.02) rotate(1deg); }
+      20% { transform: scale(.98) rotate(-1deg); }
+      40% { transform: scale(1) rotate(0deg); }
+      60% { transform: scale(1.02) rotate(-1deg); }
+      80% { transform: scale(.98) rotate(1deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+  }
+}
+
+.back {
+  position: absolute;
+  font-size: 3rem;
+  z-index: 2;
+  bottom: 2rem;
+  left: 2rem;
+  cursor: pointer;
+  color: rgb(184,105,3);
+
+  &:hover {
+    color: rgb(236,134,0);
+    text-decoration: underline;
+  }
+}
+
+.select-hero {
+  position: absolute;
+  width: 100%;
+  bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 200px;
+  z-index: 2;
+
+  
+  .select-hero-btn {
+    width: 200px;
+    height: 200px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,.3),
+                 -10px -10px 15px rgba(0,0,0,.3),
+                 -10px 10px 15px rgba(0,0,0,.3),
+                 10px -10px 15px rgba(0,0,0,.3);
+    background-color: rgb(185, 183, 183);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    border-radius: 1rem;
+
+    img {
+      width: 85%;
+      height: 85%;
+      object-fit: cover;
+      border: 3px solid black;
+      box-shadow: 5px 5px 10px black,
+                 -5px -5px 10px black,
+                 -5px 5px 10px black,
+                 5px -5px 10px black;
+      background-color: white;
+      cursor: pointer;
+      transition: transform 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+      border-radius: 1rem;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
