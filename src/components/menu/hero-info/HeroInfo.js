@@ -30,7 +30,7 @@ const HeroInfo = ({ hero, moveIn }) => {
       </div>
       <div className="specials">
         {hero.specials.map(special => 
-          <div className="special">
+          <div className="special" key={special.name}>
             <h2>{special.name}</h2>
             <p>{special.description}</p>
           </div>

@@ -8,7 +8,7 @@ import punisherIcon from '../assets/heroes/punisher-icon.png';
 
 import HeroInfo from '../../menu/hero-info/HeroInfo';
 
-const SelectMenu = () => {
+const SelectHero = () => {
 
   const [heroes, setHeroes] = useState([
     {
@@ -67,7 +67,7 @@ const SelectMenu = () => {
       <HeroInfo hero={selectedHero} moveIn={moveIn} />
       <div className="select-hero">
         {heroes.map(hero => 
-          <div className="select-hero-btn">
+          <div className="select-hero-btn" key={hero.name}>
             <img src={hero.icon} alt={`hero-${hero.name.toLowerCase()}`} onClick={() => changeHero(hero)} />
           </div>  
         )}
@@ -77,4 +77,4 @@ const SelectMenu = () => {
   )
 }
 
-export default SelectMenu;
+export default SelectHero;
