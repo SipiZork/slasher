@@ -1,7 +1,6 @@
 .hero-info {
   position: absolute;
-  bottom: 25rem;
-  background: rgba(0,0,0,.94);
+  top: 28rem;
   left: 10rem;
   z-index: 2;
   padding: 1rem;
@@ -18,10 +17,6 @@
     border: 6px solid red;
   }
 
-  h1 {
-    font-size: 4rem;
-    color: rgb(253, 138, 97);
-  }
 
   .hp-gold-info {
     color: white;
@@ -49,7 +44,7 @@
   }
 
   .specials {
-    padding: 1rem 0 0 3rem;
+    padding: 1rem 0 0 0rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;

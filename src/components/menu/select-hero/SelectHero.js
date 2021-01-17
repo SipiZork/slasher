@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './SelectHero.scss';
-import daredevilImg from '../assets/heroes/daredevil.jpg';
+import daredevilImg from '../assets/heroes/daredevil.png';
 import daredevilIcon from '../assets/heroes/daredevil-icon.jpg';
-import punisherImg from '../assets/heroes/punisher.jpg';
+import punisherImg from '../assets/heroes/punisher.png';
 import punisherIcon from '../assets/heroes/punisher-icon.png';
 
 import HeroInfo from '../../menu/hero-info/HeroInfo';

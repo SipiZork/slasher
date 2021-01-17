@@ -6,7 +6,7 @@ const HeroInfo = ({ hero, moveIn }) => {
   console.log(hero.specials);
   return (
     <div className={`hero-info${moveIn ? ' move-in' :''}`}>
-      <h1>{hero.name}</h1>
+      
       <div className="hp-gold-info">
         <div className="hp info">
           <div className="icon">
