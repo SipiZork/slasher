@@ -5,7 +5,7 @@ import './HeroInfo.scss';
 const HeroInfo = ({ hero, moveIn }) => {
   console.log(hero.specials);
   return (
-    <div className={`hero-info${moveIn ? ' move-in' :''}`}>
+    <div className='hero-info'>
       
       <div className="hp-gold-info">
         <div className="hp info">

@@ -89,3 +89,63 @@
     }
   }
 }
+
+.hero {
+  position: absolute;
+  top: 28rem;
+  left: 10rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateX(0);
+  transition: all .25s;
+
+  &.move-in {
+    transition: none;
+    transform: translateX(calc(-100% - 10rem));
+    border: 6px solid red;
+  }
+
+  button {
+    position: relative;
+    margin: 1rem auto;
+    background-color: rgb(185, 183, 183);
+    width: 50%;
+    height: 100%;
+    font-size: 3rem;
+    font-family: 'Yusei Magic', sans-serif;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      z-index: -1;
+      position: absolute;
+      left: -1rem;
+      top: -1rem;
+      width: calc(100% + 2rem);
+      height: calc(100% + 2rem);
+      background-color: red;
+      background-image: linear-gradient(159deg, 
+                      rgb(104, 104, 104) 0%, 
+                      rgb(104,104,104) 51%,
+                      rgb(133, 133, 133) 50%,
+                      rgb(133, 133, 133) 100%);
+    }
+
+    &:hover {
+      background-color: rgb(61, 61, 61);
+      color: white;
+      &:after {
+        background-image: linear-gradient(159deg, 
+                      rgb(133, 133, 133) 0%, 
+                      rgb(133, 133, 133) 51%,
+                      rgb(104, 104, 104) 50%,
+                      rgb(104, 104, 104) 100%);
+      }
+    }
+  }
+}

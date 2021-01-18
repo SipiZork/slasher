@@ -1,14 +1,17 @@
 import React, { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './SelectHero.scss';
 import daredevilImg from '../assets/heroes/daredevil.png';
 import daredevilIcon from '../assets/heroes/daredevil-icon.jpg';
 import punisherImg from '../assets/heroes/punisher.png';
 import punisherIcon from '../assets/heroes/punisher-icon.png';
-
 import HeroInfo from '../../menu/hero-info/HeroInfo';
 
-const SelectHero = () => {
+import { setHero } from '../../../actions/game';
+
+import { connect } from 'react-redux';
+
+const SelectHero = ({ setHero, history }) => {
 
   const [heroes, setHeroes] = useState([
     {
@@ -61,10 +64,18 @@ const SelectHero = () => {
     }
   }
 
+  const startGame = () => {
+    setHero(selectedHero);
+    console.log(history.push('/game'));
+  }
+
   return (
     <Fragment>
       <div className={`select-hero-background${shake ? ' shake' : ''}`} style={{ backgroundImage: `url(${selectedHero.img})` }}></div>
-      <HeroInfo hero={selectedHero} moveIn={moveIn} />
+      <div className={`hero${moveIn ? ' move-in' :''}`}>
+        <HeroInfo hero={selectedHero} moveIn={moveIn} />
+        <button type="submit" onClick={startGame}>Indítás</button>
+      </div>
       <div className="select-hero">
         {heroes.map(hero => 
           <div className="select-hero-btn" key={hero.name}>
@@ -77,4 +88,4 @@ const SelectHero = () => {
   )
 }
 
-export default SelectHero;
+export default connect(null, { setHero })(SelectHero);

@@ -5,6 +5,7 @@ import store from './store';
 import './App.css';
 import MainMenu from './components/menu/main-menu/MainMenu';
 import SelectHero from './components/menu/select-hero/SelectHero';
+import SelectRoute from './components/route/SelectRoute';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={MainMenu}></Route>
               <Route exact path="/start" component={SelectHero}></Route>
+              <Route exact path="/game" component={SelectRoute}></Route>
             </Switch>
           </div>
         </Fragment>

@@ -1,21 +1,10 @@
 .hero-info {
-  position: absolute;
-  top: 28rem;
-  left: 10rem;
-  z-index: 2;
-  padding: 1rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   gap: .5rem;
   transform: translateX(0);
   transition: all .25s;
-
-  &.move-in {
-    transition: none;
-    transform: translateX(calc(-100% - 10rem));
-    border: 6px solid red;
-  }
 
 
   .hp-gold-info {
