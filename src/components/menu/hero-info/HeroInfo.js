@@ -3,7 +3,6 @@ import React from 'react';
 import './HeroInfo.scss';
 
 const HeroInfo = ({ hero, moveIn }) => {
-  console.log(hero.specials);
   return (
     <div className='hero-info'>
       

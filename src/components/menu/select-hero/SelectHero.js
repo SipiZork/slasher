@@ -19,8 +19,10 @@ const SelectHero = ({ setHero, history }) => {
       img: daredevilImg,
       icon: daredevilIcon,
       hp: 120,
+      maxhp: 120,
       gold: 90,
       description: 'lorem ipsum sonato undo potento carmulento phisos tum',
+      potions: [null,null,null],
       specials: [
         {
           name: 'Vak vezet világtalant',
@@ -33,8 +35,10 @@ const SelectHero = ({ setHero, history }) => {
       img: punisherImg,
       icon: punisherIcon,
       hp: 450,
+      maxhp: 450,
       gold: 0,
       description: 'lorem ipsum sonato undo potento carmulento phisos tum',
+      potions: [null,null,null],
       specials: [
         {
           name: 'Bika fej',

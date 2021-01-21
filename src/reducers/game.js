@@ -3,13 +3,25 @@ import daredevilImg from '../components/menu/assets/heroes/daredevil.png';
 import daredevilIcon from '../components/menu/assets/heroes/daredevil-icon.jpg';
 
 const initialSate = {
+  turn: 0,
   hero: {
     name: 'Daredevil',
     img: daredevilImg,
     icon: daredevilIcon,
     hp: 120,
+    maxhp: 120,
     gold: 90,
     description: 'lorem ipsum sonato undo potento carmulento phisos tum',
+    potions: [
+      null,
+      {
+        icon: 'fa-skull-crossbones',
+        type: 'posion',
+        name: 'Small Potion',
+        description: 'Három körön keresztül kör végén 5 méregsebzést ad a kijelölt ellenfélnek'
+      },
+      null
+    ],
     specials: [
       {
         name: 'Vak vezet világtalant',
@@ -17,30 +29,32 @@ const initialSate = {
       }
     ]
   },
-  loading: false,
+  loading: true,
   map: {
-    0: [
+    routes: [
       {
-        style: 'fight',
-        enemies: 2
-      },
-      {
-        style: 'fight',
-        enemies: 1
-      },
-      {
-        style: 'shop',
-        enemies: 0
-      }
-    ],
-    1: [
-      {
-        stlye: 'shop',
-        enemies: 0
-      },
-      {
-        style: 'fight',
-        enemies: 2
+        name: 'route1',
+        locations: [
+          {
+            style: 'fight',
+            type: 'location',
+            enemies: 2
+          },
+          {
+            style: 'fight',
+            type: 'location',
+            enemies: 1
+          },
+          {
+            type: 'common-location',
+            locationNumber: 2
+          },
+          {
+            style: 'boos',
+            type: 'location',
+            enemies: 1
+          }
+        ]
       }
     ]
   }

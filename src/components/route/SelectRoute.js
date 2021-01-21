@@ -2,18 +2,24 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import GameNavbar from '../game-navbar/GameNavbar';
+import GameMap from '../game-map/GameMap';
+
+import './SelectRoute.scss';
+
 const SelectRoute = ({ game }) => {
   const { map } = game;
+  const { routes } = map;
+  let allRoutes = [];
 
-  const createMap = (map) => {
-    for (let [key, value] of Object.entries(map)) {
-      console.log(key, value);
-    }
-  }
+  routes.map(route => {
+    allRoutes.push(route);
+  })
 
   return (
     <Fragment>
-      {createMap(map)}
+      <GameNavbar game={game} />
+      <GameMap />
     </Fragment>
   )
 }
