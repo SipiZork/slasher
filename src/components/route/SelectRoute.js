@@ -7,7 +7,7 @@ import GameMap from '../game-map/GameMap';
 
 import './SelectRoute.scss';
 
-const SelectRoute = ({ game }) => {
+const SelectRoute = ({ game, history }) => {
   const { map } = game;
   const { routes } = map;
   let allRoutes = [];
@@ -18,8 +18,8 @@ const SelectRoute = ({ game }) => {
 
   return (
     <Fragment>
-      <GameNavbar game={game} />
-      <GameMap />
+      <GameNavbar hero={game.hero} turn={game.turn} />
+      <GameMap history={history} />
     </Fragment>
   )
 }

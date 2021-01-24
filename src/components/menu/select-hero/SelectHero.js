@@ -6,6 +6,7 @@ import daredevilIcon from '../assets/heroes/daredevil-icon.jpg';
 import punisherImg from '../assets/heroes/punisher.png';
 import punisherIcon from '../assets/heroes/punisher-icon.png';
 import HeroInfo from '../../menu/hero-info/HeroInfo';
+import { v4 as uuidv4 } from 'uuid';
 
 import { setHero } from '../../../actions/game';
 
@@ -22,7 +23,23 @@ const SelectHero = ({ setHero, history }) => {
       maxhp: 120,
       gold: 90,
       description: 'lorem ipsum sonato undo potento carmulento phisos tum',
-      potions: [null,null,null],
+      potions: [
+        {
+          id: uuidv4(),
+          name: null
+        },
+        {
+          id: uuidv4(),
+          icon: 'fa-skull-crossbones',
+          type: 'posion',
+          name: 'Small Potion',
+          description: 'Három körön keresztül kör végén 5 méregsebzést ad a kijelölt ellenfélnek'
+        },
+        {
+          id: uuidv4(),
+          name: null
+      }
+      ],
       specials: [
         {
           name: 'Vak vezet világtalant',
@@ -70,7 +87,7 @@ const SelectHero = ({ setHero, history }) => {
 
   const startGame = () => {
     setHero(selectedHero);
-    console.log(history.push('/game'));
+    history.push('/select-route');
   }
 
   return (

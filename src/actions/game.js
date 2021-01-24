@@ -9,4 +9,4 @@ export const setHero = (hero) => dispatch => {
   } catch (err) {
     console.log(err);
   }
-}
+};

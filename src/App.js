@@ -6,6 +6,8 @@ import './App.css';
 import MainMenu from './components/menu/main-menu/MainMenu';
 import SelectHero from './components/menu/select-hero/SelectHero';
 import SelectRoute from './components/route/SelectRoute';
+import Fight from './components/game/Fight';
+import NoMatch from './components/errors/NoMatch';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
             <Switch>
               <Route exact path="/" component={MainMenu}></Route>
               <Route exact path="/start" component={SelectHero}></Route>
-              <Route exact path="/game" component={SelectRoute}></Route>
+              <Route path="/select-route" component={SelectRoute}></Route>
+              <Route path="/fight" component={Fight}></Route>
+              <Route path="*" component={NoMatch}></Route>
             </Switch>
           </div>
         </Fragment>

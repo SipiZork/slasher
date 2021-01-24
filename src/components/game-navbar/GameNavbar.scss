@@ -1,8 +1,5 @@
 .game-navbar {
-  position: absolute;
   width: 100%;
-  top: 0;
-  left: 0;
   height: 60px;
   background-image: linear-gradient(10deg, rgb(0,0,0) 10%, rgb(90,90,90) 100%);
   display: flex;
@@ -13,6 +10,7 @@
 
   h2 {
     font-size: 2rem;
+    color: white;
     font-family: 'Caveat', cursive;
   }
 
