@@ -1,4 +1,4 @@
-import { SET_HERO } from '../actions/types';
+import { SET_HERO, SHUFFLE_DECK } from '../actions/types';
 import daredevilImg from '../components/menu/assets/heroes/daredevil.png';
 import daredevilIcon from '../components/menu/assets/heroes/daredevil-icon.jpg';
 import { v4 as uuidv4 } from 'uuid';
@@ -10,10 +10,84 @@ const initialSate = {
     name: 'Daredevil',
     img: daredevilImg,
     icon: daredevilIcon,
-    hp: 12,
+    hp: 120,
     maxhp: 120,
     gold: 90,
     description: 'lorem ipsum sonato undo potento carmulento phisos tum',
+    cards: [
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Bal egyenes',
+        type: 'attack',
+        text: '6 sebzés egy ellenfélre'
+      },
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Bal egyenes',
+        type: 'attack',
+        text: '6 sebzés egy ellenfélre'
+      },
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Bal egyenes',
+        type: 'attack',
+        text: '6 sebzés egy ellenfélre'
+      },
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Bal egyenes',
+        type: 'attack',
+        text: '6 sebzés egy ellenfélre'
+      },
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Bal egyenes',
+        type: 'attack',
+        text: '6 sebzés egy ellenfélre'
+      },
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Védekezés',
+        type: 'defend',
+        text: '5 páncél magadra'
+      },
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Védekezés',
+        type: 'defend',
+        text: '5 páncél magadra'
+      },
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Védekezés',
+        type: 'defend',
+        text: '5 páncél magadra'
+      },
+      {
+        id: uuidv4(),
+        mana: 1,
+        name: 'Védekezés',
+        type: 'defend',
+        text: '5 páncél magadra'
+      },
+      {
+        id: uuidv4(),
+        mana: 2,
+        name: 'Botolás',
+        type: 'attack',
+        text: '8 sebzés egy ellenfélnek. Bónuszsebzés a következő 2 körben'
+      },
+    ],
+    inHandCards: [],
+    usedCards: [],
     potions: [
       {
         id: uuidv4(),
@@ -92,7 +166,14 @@ export default function (state = initialSate, action) {
         ...state,
         hero: payload
       }
-  
+    case SHUFFLE_DECK:
+      return {
+        ...state,
+        hero: {
+          ...state.hero,
+          cards: state.hero.cards.sort(() => Math.random() - 0.5)
+        } 
+      }
     default:
       return state
   }
