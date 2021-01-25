@@ -11,13 +11,12 @@ export const setHero = (hero) => dispatch => {
   }
 };
 
-export const shuffleDeck = (cards) => dispatch => {
+export const shuffleDeck = () => dispatch => {
   
   console.log('done');
   try {
     dispatch({
-      type: SHUFFLE_DECK,
-      payload: cards
+      type: SHUFFLE_DECK
     });
   } catch (err) {
     console.log(err);

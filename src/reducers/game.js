@@ -20,6 +20,9 @@ const initialSate = {
         mana: 1,
         name: 'Bal egyenes',
         type: 'attack',
+        damage: 6,
+        defense: 0,
+        bonusDamage: 0,
         text: '6 sebzés egy ellenfélre'
       },
       {
@@ -27,6 +30,9 @@ const initialSate = {
         mana: 1,
         name: 'Bal egyenes',
         type: 'attack',
+        damage: 6,
+        defense: 0,
+        bonusDamage: 0,
         text: '6 sebzés egy ellenfélre'
       },
       {
@@ -34,6 +40,9 @@ const initialSate = {
         mana: 1,
         name: 'Bal egyenes',
         type: 'attack',
+        damage: 6,
+        defense: 0,
+        bonusDamage: 0,
         text: '6 sebzés egy ellenfélre'
       },
       {
@@ -41,6 +50,9 @@ const initialSate = {
         mana: 1,
         name: 'Bal egyenes',
         type: 'attack',
+        damage: 6,
+        defense: 0,
+        bonusDamage: 0,
         text: '6 sebzés egy ellenfélre'
       },
       {
@@ -48,6 +60,9 @@ const initialSate = {
         mana: 1,
         name: 'Bal egyenes',
         type: 'attack',
+        damage: 6,
+        defense: 0,
+        bonusDamage: 0,
         text: '6 sebzés egy ellenfélre'
       },
       {
@@ -55,6 +70,9 @@ const initialSate = {
         mana: 1,
         name: 'Védekezés',
         type: 'defend',
+        damage: 0,
+        defense: 5,
+        bonusDamage: 0,
         text: '5 páncél magadra'
       },
       {
@@ -62,6 +80,9 @@ const initialSate = {
         mana: 1,
         name: 'Védekezés',
         type: 'defend',
+        damage: 0,
+        defense: 5,
+        bonusDamage: 0,
         text: '5 páncél magadra'
       },
       {
@@ -69,6 +90,9 @@ const initialSate = {
         mana: 1,
         name: 'Védekezés',
         type: 'defend',
+        damage: 0,
+        defense: 5,
+        bonusDamage: 0,
         text: '5 páncél magadra'
       },
       {
@@ -76,6 +100,9 @@ const initialSate = {
         mana: 1,
         name: 'Védekezés',
         type: 'defend',
+        damage: 0,
+        defense: 5,
+        bonusDamage: 0,
         text: '5 páncél magadra'
       },
       {
@@ -83,6 +110,9 @@ const initialSate = {
         mana: 2,
         name: 'Botolás',
         type: 'attack',
+        damage:  8,
+        defense: 0,
+        bonusDamage: 2,
         text: '8 sebzés egy ellenfélnek. Bónuszsebzés a következő 2 körben'
       },
     ],

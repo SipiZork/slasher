@@ -23,6 +23,110 @@ const SelectHero = ({ setHero, history }) => {
       maxhp: 120,
       gold: 90,
       description: 'lorem ipsum sonato undo potento carmulento phisos tum',
+      cards: [
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Bal egyenes',
+          type: 'attack',
+          damage: 6,
+          defense: 0,
+          bonusDamage: 0,
+          text: '6 sebzés egy ellenfélre'
+        },
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Bal egyenes',
+          type: 'attack',
+          damage: 6,
+          defense: 0,
+          bonusDamage: 0,
+          text: '6 sebzés egy ellenfélre'
+        },
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Bal egyenes',
+          type: 'attack',
+          damage: 6,
+          defense: 0,
+          bonusDamage: 0,
+          text: '6 sebzés egy ellenfélre'
+        },
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Bal egyenes',
+          type: 'attack',
+          damage: 6,
+          defense: 0,
+          bonusDamage: 0,
+          text: '6 sebzés egy ellenfélre'
+        },
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Bal egyenes',
+          type: 'attack',
+          damage: 6,
+          defense: 0,
+          bonusDamage: 0,
+          text: '6 sebzés egy ellenfélre'
+        },
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Védekezés',
+          type: 'defend',
+          damage: 0,
+          defense: 5,
+          bonusDamage: 0,
+          text: '5 páncél magadra'
+        },
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Védekezés',
+          type: 'defend',
+          damage: 0,
+          defense: 5,
+          bonusDamage: 0,
+          text: '5 páncél magadra'
+        },
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Védekezés',
+          type: 'defend',
+          damage: 0,
+          defense: 5,
+          bonusDamage: 0,
+          text: '5 páncél magadra'
+        },
+        {
+          id: uuidv4(),
+          mana: 1,
+          name: 'Védekezés',
+          type: 'defend',
+          damage: 0,
+          defense: 5,
+          bonusDamage: 0,
+          text: '5 páncél magadra'
+        },
+        {
+          id: uuidv4(),
+          mana: 2,
+          name: 'Botolás',
+          type: 'attack',
+          damage:  8,
+          defense: 0,
+          bonusDamage: 2,
+          text: '8 sebzés egy ellenfélnek. Bónuszsebzés a következő 2 körben'
+        },
+      ],
+      inHandCards: [],
+      usedCards: [],
       potions: [
         {
           id: uuidv4(),
@@ -38,7 +142,7 @@ const SelectHero = ({ setHero, history }) => {
         {
           id: uuidv4(),
           name: null
-      }
+       }
       ],
       specials: [
         {

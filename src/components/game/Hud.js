@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Card from '../card/Card';
 import './Hud.scss';
 
 const Hud = ({ cards, usedCards, inHandCards }) => {
@@ -10,13 +11,7 @@ const Hud = ({ cards, usedCards, inHandCards }) => {
       </div>
       <div className="hand-cards">
           {inHandCards.map(card => 
-            <div className="card">
-              <div className="card-mana">{card.mana}</div>
-              <div className="card-name">{card.name}</div>
-              <div className="card-image"></div>
-              <div className="card-type">{card.type}</div>
-              <div className="card-text">{card.text}</div>
-            </div>
+            <Card card={card}/>
           )}
       </div>
       <div className="used-cards cards">

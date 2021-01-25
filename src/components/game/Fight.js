@@ -1,10 +1,11 @@
-import React, {Fragment, useEffect} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import daredevilImg from '../menu/assets/heroes/daredevil.png';
 import enemyImg from './assets/enemy1.png';
 import './Fight.scss';
 import GameNavbar from '../game-navbar/GameNavbar';
+import Card from '../card/Card';
 import { damageEnemy } from '../../actions/fight';
 import { shuffleDeck } from '../../actions/game';
 import Hud from './Hud';
@@ -14,18 +15,45 @@ const Fight = ({ game, fight, damageEnemy, shuffleDeck }) => {
   const { hero } = game;
   const { turn } = fight;
 
+  const [showCards, setShowCards] = useState(true);
+  const [hideCards, setHideCards] = useState(false);
+
   const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min); 
   }
 
+  const Cards = () => {
+   
+
+  }
+
+  const startFight = () => {
+    setHideCards(true);
+    setTimeout(() => {
+      shuffleDeck();
+      setHideCards(false);
+      setShowCards(false);
+    }, 500);
+  }
+
   useEffect(() => {
-    shuffleDeck()
+    // shuffleDeck()
   }, [shuffleDeck])
 
   return (
     <Fragment>
       <GameNavbar game/>
       <div className="game-container">
+        <div className={`start-cards-container${showCards ? ' show' : ' remove'}${hideCards ? ' hide' : ''}`}>
+          <div className="cards">
+            {hero.cards.map(card => {
+              console.log(card.name);
+              return <Card card={card} />;
+              }
+            )}
+          </div>
+          <div className="start-btn btn" onClick={() => startFight()}>Küzdelem</div>
+        </div>
         <div className="battlefield">
           <div className="own-hero characters" onClick={() => shuffleDeck()}>
             <img src={daredevilImg} />
