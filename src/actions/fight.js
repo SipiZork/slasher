@@ -1,4 +1,4 @@
-import { CREATE_ENEMIES, NEXT_TURN, DAMAGE_ENEMY } from './types';
+import { CREATE_ENEMIES, NEXT_TURN, DAMAGE_ENEMY, REMOVE_MANA } from './types';
 import { v4 as uuidv4 } from 'uuid';
 
 const randomNumber = (min, max) => {
@@ -47,6 +47,17 @@ export const damageEnemy = (id, damage) => dispatch => {
         id: id,
         damage: damage
       }
+    })
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const removeMana = (mana) => dispatch => {
+  try {
+    dispatch({
+      type: REMOVE_MANA,
+      payload: mana
     })
   } catch (err) {
     console.log(err);

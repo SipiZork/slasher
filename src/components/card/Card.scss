@@ -13,6 +13,12 @@
   filter: grayscale(60%);
   transition: all .25s;
 
+  &.selected {
+    border: 3px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 10px rgb(1, 216, 1); 
+    transform: scale(1.2);
+  }
+
   &:hover {
     transform: scale(1.2);
     filter: grayscale(0%);

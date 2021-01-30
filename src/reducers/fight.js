@@ -1,4 +1,4 @@
-import {CREATE_ENEMIES, NEXT_TURN, DAMAGE_ENEMY} from '../actions/types';
+import {CREATE_ENEMIES, NEXT_TURN, DAMAGE_ENEMY, REMOVE_MANA} from '../actions/types';
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
@@ -9,6 +9,7 @@ const initialState = {
       id: uuidv4(),
       maxhp: 31,
       hp: 31,
+      armor: 0,
       damage: 6,
       bonusDamageTurn: 0,
     },
@@ -16,6 +17,7 @@ const initialState = {
       id: uuidv4(),
       maxhp: 28,
       hp: 28,
+      armor: 0,
       damage: 8,
       bonusDamgeTurn: 0,
     }
@@ -46,6 +48,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         enemies: enemies
+      }
+    case REMOVE_MANA:
+      return {
+        ...state,
+        mana: state.mana - payload
       }
     default:
       return state;
