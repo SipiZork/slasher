@@ -87,11 +87,8 @@ const Fight = ({ game, fight, damageEnemy, shuffleDeck, addCardToHand, selectCar
   }
 
   const removeCardSelect = () => {
-    if (game.selectedCardToPlay !== null) {
-      console.log('Kártya törölve');
-      selectCardToPlay(null);
-      setShowSelector({ show: false })
-    }
+    selectCardToPlay(null);
+    setShowSelector({ show: false });
   }
 
   const onRightClick = (e) => {
@@ -99,16 +96,20 @@ const Fight = ({ game, fight, damageEnemy, shuffleDeck, addCardToHand, selectCar
     removeCardSelect();
   }
 
-  const onKeyUp = (e) => {
-    if (e.code === 'Escape') {
+  const onKeyUp = ({ key }) => {
+    if (key === 'Escape') {
       removeCardSelect();
     }
+    
   }
 
   useEffect(() => {
-    // shuffleDeck()
-    document.addEventListener('keyup', (e) => onKeyUp(e));
-  }, [shuffleDeck])
+    window.addEventListener('keyup', onKeyUp);
+
+    return () => {
+      window.removeEventListener('keyup', onKeyUp);
+    }
+  }, [])
 
   return (
     <Fragment>
